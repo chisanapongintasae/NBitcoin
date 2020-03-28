@@ -27,11 +27,6 @@ class NewsBitcoinTableViewCell: UITableViewCell {
 	func setData(result: Articles) {
 		self.titleLabel.text = result.title
 		self.authorLabel.text = result.author
-//		guard let url = URL(string: "\(String(describing: result.url))") else { return }
-//
-//		UIImage.loadFrom(url: url) { image in
-//			 self.newsImage.image = image
-//		}
 		self.newsImage.sd_setImage(with: URL(string: result.url ?? ""), placeholderImage: UIImage(named: "thumbnail-default") )
 		self.newsImage.layer.cornerRadius = 12.0
 	}

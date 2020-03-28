@@ -112,5 +112,75 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="e1B-o6-uLR">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="iUQ-xi-GaC" customClass="DetailViewController" customModule="NBitcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wBK-SM-Ldd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-w1-GMn">
+                                <rect key="frame" x="25" y="94" width="364" height="28"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgn-Hw-1wF">
+                                <rect key="frame" x="25" y="396" width="364" height="23.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvT-P9-eZ7">
+                                <rect key="frame" x="34" y="142" width="344" height="229"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="344" id="PM8-dD-yDr"/>
+                                    <constraint firstAttribute="height" constant="229" id="XZD-kc-Sg8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04V-YH-p99">
+                                <rect key="frame" x="20" y="60" width="46" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23.5" id="ZRc-ri-1Xb"/>
+                                    <constraint firstAttribute="width" constant="46" id="vdq-89-BDE"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="arrowshape.turn.up.left.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton:" destination="iUQ-xi-GaC" eventType="touchUpInside" id="tjY-rf-H7J"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="03Y-qb-PO6" firstAttribute="trailing" secondItem="Wgn-Hw-1wF" secondAttribute="trailing" constant="25" id="9W4-AV-EEg"/>
+                            <constraint firstItem="jqd-w1-GMn" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="25" id="A5b-7E-V3l"/>
+                            <constraint firstItem="03Y-qb-PO6" firstAttribute="trailing" secondItem="jqd-w1-GMn" secondAttribute="trailing" constant="25" id="CGJ-TQ-ubo"/>
+                            <constraint firstItem="xvT-P9-eZ7" firstAttribute="top" secondItem="jqd-w1-GMn" secondAttribute="bottom" constant="20" id="ELr-Vk-MBX"/>
+                            <constraint firstItem="jqd-w1-GMn" firstAttribute="leading" secondItem="xvT-P9-eZ7" secondAttribute="trailing" constant="-353" id="EbH-1C-6G6"/>
+                            <constraint firstItem="04V-YH-p99" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="20" id="F2P-cM-s16"/>
+                            <constraint firstItem="Wgn-Hw-1wF" firstAttribute="top" secondItem="xvT-P9-eZ7" secondAttribute="bottom" constant="25" id="L5g-ob-VzT"/>
+                            <constraint firstItem="04V-YH-p99" firstAttribute="top" secondItem="03Y-qb-PO6" secondAttribute="top" constant="15" id="Nil-zb-pxe"/>
+                            <constraint firstItem="Wgn-Hw-1wF" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="25" id="RSn-u0-JnC"/>
+                            <constraint firstItem="jqd-w1-GMn" firstAttribute="top" secondItem="03Y-qb-PO6" secondAttribute="top" constant="50" id="sHS-Vb-9pc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="03Y-qb-PO6"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Wgn-Hw-1wF" id="y8p-la-MgM"/>
+                        <outlet property="newsImage" destination="xvT-P9-eZ7" id="fai-9B-sXt"/>
+                        <outlet property="titleLabel" destination="jqd-w1-GMn" id="Go2-fY-iQC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uz-Xz-Uld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="107.8125"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
+    </resources>
 </document>

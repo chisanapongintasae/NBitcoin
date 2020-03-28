@@ -11,9 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	@IBOutlet weak var tableView: UITableView!
+	
 	private var newsBitcoin: NewsItem? = nil
 	private var service: NewbitcoinService? = nil
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,6 +42,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		return 110
 	}
 	
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let selectNews = self.newsBitcoin?.articles[indexPath.row] else {
+			return
+		}
+		let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+		let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as!
+		DetailViewController
+		detailVC.setShowDetail(result: selectNews)
+		self.present(detailVC, animated: true, completion: nil)
+	}
 }
 
 extension UIImage {
