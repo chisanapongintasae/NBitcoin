@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
+	@IBOutlet var searchBar: UISearchBar!
 	@IBOutlet weak var tableView: UITableView!
 	
 	private var newsBitcoin: NewsItem? = nil
@@ -19,9 +20,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		super.viewDidLoad()
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
+		self.searchBar.delegate = self
+		self.searchBar.resignFirstResponder()
 		self.service = NewbitcoinService()
 		service?.fetchNewsBitcoin { (newsItem) in
 			self.newsBitcoin = newsItem
+			guard let news = newsItem else {
+				return
+			}
+			NewsManager.shared.news = news
 			self.tableView.reloadData()
 		}
 	}
@@ -42,7 +49,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		return 110
 	}
 	
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let selectNews = self.newsBitcoin?.articles[indexPath.row] else {
 			return
@@ -55,19 +61,59 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 }
 
+extension ViewController: UISearchBarDelegate {
+	
+//	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//		print(searchText)
+//		let data = NewsManager.shared.news
+//		if searchText.isEmpty {
+//			self.newsBitcoin = NewsManager.shared.news
+//			tableView.reloadData()
+//		} else {
+//			let filterdItemsArray = data?.articles.filter { item in
+//				return ((item.title.lowercased())).contains(searchText.lowercased())
+//			}
+//			guard let filter = filterdItemsArray else {
+//				return
+//			}
+//			self.newsBitcoin?.articles = filter
+//			tableView.reloadData()
+//		}
+//	}
+//
+		func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+			print(searchText)
+			let data = NewsManager.shared.news
+			if searchText.isEmpty {
+				self.newsBitcoin = NewsManager.shared.news
+				tableView.reloadData()
+			} else {
+				let filterdItemsArray = data?.articles.filter { return (($0.title.lowercased())).contains(searchText.lowercased()) }
+
+				guard let filter = filterdItemsArray else {
+					return
+				}
+				self.newsBitcoin?.articles = filter
+				tableView.reloadData()
+			}
+		}
+}
+
+
+
 extension UIImage {
-    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    completion(UIImage(data: data))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
-            }
-        }
-    }
+	public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
+		DispatchQueue.global().async {
+			if let data = try? Data(contentsOf: url) {
+				DispatchQueue.main.async {
+					completion(UIImage(data: data))
+				}
+			} else {
+				DispatchQueue.main.async {
+					completion(nil)
+				}
+			}
+		}
+	}
 }
 

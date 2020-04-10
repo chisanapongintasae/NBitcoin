@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xlT-kD-pMN">
-                                <rect key="frame" x="0.0" y="119" width="414" height="777"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsBitcoinTableViewCell" rowHeight="110" id="wOq-nn-zKh" customClass="NewsBitcoinTableViewCell" customModule="NBitcoin" customModuleProvider="target">
@@ -88,15 +88,26 @@
                                 <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3gQ-Q5-Ol1">
+                                <rect key="frame" x="-5" y="119" width="419" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KBr-Rs-2c0"/>
+                                    <constraint firstAttribute="width" constant="419" id="fCI-Ap-Dfi"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Djg-Bg-0t8" firstAttribute="centerY" secondItem="w6Y-NW-Eyw" secondAttribute="centerY" id="64i-Jb-OCQ"/>
                             <constraint firstAttribute="bottom" secondItem="xlT-kD-pMN" secondAttribute="bottom" id="6e3-NF-5BJ"/>
                             <constraint firstItem="CjZ-A9-ZQa" firstAttribute="leading" secondItem="Djg-Bg-0t8" secondAttribute="trailing" constant="2" id="BTW-6U-mQv"/>
-                            <constraint firstItem="xlT-kD-pMN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="Mmx-RB-2im"/>
+                            <constraint firstItem="3gQ-Q5-Ol1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KYc-A8-eBm"/>
+                            <constraint firstItem="xlT-kD-pMN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="Mmx-RB-2im"/>
+                            <constraint firstItem="3gQ-Q5-Ol1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NvN-SJ-h0a"/>
                             <constraint firstItem="w6Y-NW-Eyw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Oc5-Zc-dDc"/>
                             <constraint firstItem="Djg-Bg-0t8" firstAttribute="leading" secondItem="w6Y-NW-Eyw" secondAttribute="trailing" constant="1" id="Rnr-nv-yPU"/>
+                            <constraint firstItem="3gQ-Q5-Ol1" firstAttribute="top" secondItem="w6Y-NW-Eyw" secondAttribute="bottom" id="UMj-0V-Q28"/>
                             <constraint firstItem="CjZ-A9-ZQa" firstAttribute="centerY" secondItem="Djg-Bg-0t8" secondAttribute="centerY" id="f9v-zU-zOD"/>
                             <constraint firstItem="xlT-kD-pMN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lb8-x1-Yme"/>
                             <constraint firstItem="xlT-kD-pMN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oSL-2O-g9k"/>
@@ -105,6 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="3gQ-Q5-Ol1" id="8G2-P9-A65"/>
                         <outlet property="tableView" destination="xlT-kD-pMN" id="uW4-z5-76m"/>
                     </connections>
                 </viewController>
@@ -139,14 +151,14 @@
                                     <constraint firstAttribute="height" constant="229" id="XZD-kc-Sg8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04V-YH-p99">
-                                <rect key="frame" x="20" y="60" width="46" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04V-YH-p99">
+                                <rect key="frame" x="15" y="59" width="28" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="23.5" id="ZRc-ri-1Xb"/>
-                                    <constraint firstAttribute="width" constant="46" id="vdq-89-BDE"/>
+                                    <constraint firstAttribute="height" constant="28" id="I3U-Pw-LGA"/>
+                                    <constraint firstAttribute="width" constant="28" id="fdW-RR-6XF"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="arrowshape.turn.up.left.fill" catalog="system">
+                                <state key="normal" image="close_icon">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -161,11 +173,11 @@
                             <constraint firstItem="03Y-qb-PO6" firstAttribute="trailing" secondItem="jqd-w1-GMn" secondAttribute="trailing" constant="25" id="CGJ-TQ-ubo"/>
                             <constraint firstItem="xvT-P9-eZ7" firstAttribute="top" secondItem="jqd-w1-GMn" secondAttribute="bottom" constant="20" id="ELr-Vk-MBX"/>
                             <constraint firstItem="jqd-w1-GMn" firstAttribute="leading" secondItem="xvT-P9-eZ7" secondAttribute="trailing" constant="-353" id="EbH-1C-6G6"/>
-                            <constraint firstItem="04V-YH-p99" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="20" id="F2P-cM-s16"/>
                             <constraint firstItem="Wgn-Hw-1wF" firstAttribute="top" secondItem="xvT-P9-eZ7" secondAttribute="bottom" constant="25" id="L5g-ob-VzT"/>
-                            <constraint firstItem="04V-YH-p99" firstAttribute="top" secondItem="03Y-qb-PO6" secondAttribute="top" constant="15" id="Nil-zb-pxe"/>
                             <constraint firstItem="Wgn-Hw-1wF" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="25" id="RSn-u0-JnC"/>
+                            <constraint firstItem="04V-YH-p99" firstAttribute="top" secondItem="03Y-qb-PO6" secondAttribute="top" constant="15" id="leL-90-nYt"/>
                             <constraint firstItem="jqd-w1-GMn" firstAttribute="top" secondItem="03Y-qb-PO6" secondAttribute="top" constant="50" id="sHS-Vb-9pc"/>
+                            <constraint firstItem="04V-YH-p99" firstAttribute="leading" secondItem="03Y-qb-PO6" secondAttribute="leading" constant="15" id="zrc-jj-fhT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="03Y-qb-PO6"/>
                     </view>
@@ -181,6 +193,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
+        <image name="close_icon" width="150" height="150"/>
     </resources>
 </document>

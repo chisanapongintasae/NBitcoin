@@ -18,6 +18,7 @@
 		FC319990242DF17400588065 /* NewsBitcoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31998F242DF17400588065 /* NewsBitcoinService.swift */; };
 		FC319992242DFB3D00588065 /* NewsBitcoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC319991242DFB3D00588065 /* NewsBitcoinTableViewCell.swift */; };
 		FC319995242F133500588065 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC319994242F133500588065 /* DetailViewController.swift */; };
+		FC3199992439CE5100588065 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3199982439CE5100588065 /* NewsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FC31998F242DF17400588065 /* NewsBitcoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBitcoinService.swift; sourceTree = "<group>"; };
 		FC319991242DFB3D00588065 /* NewsBitcoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBitcoinTableViewCell.swift; sourceTree = "<group>"; };
 		FC319994242F133500588065 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FC3199982439CE5100588065 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		FC319976242DDBA600588065 /* NBitcoin */ = {
 			isa = PBXGroup;
 			children = (
+				FC3199972439CDDE00588065 /* New Group */,
 				FC319993242F077400588065 /* ViewController */,
 				FC31998C242DF00600588065 /* Model */,
 				FC31998B242DEFFC00588065 /* Service */,
@@ -105,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				FC31998F242DF17400588065 /* NewsBitcoinService.swift */,
+				FC3199982439CE5100588065 /* NewsManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -125,6 +129,13 @@
 				FC319994242F133500588065 /* DetailViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FC3199972439CDDE00588065 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				FC31997C242DDBA600588065 /* ViewController.swift in Sources */,
 				FC31998E242DF15D00588065 /* NewsBitcoin.swift in Sources */,
 				FC319992242DFB3D00588065 /* NewsBitcoinTableViewCell.swift in Sources */,
+				FC3199992439CE5100588065 /* NewsManager.swift in Sources */,
 				FC319978242DDBA600588065 /* AppDelegate.swift in Sources */,
 				FC31997A242DDBA600588065 /* SceneDelegate.swift in Sources */,
 				FC319995242F133500588065 /* DetailViewController.swift in Sources */,

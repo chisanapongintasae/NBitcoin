@@ -34,6 +34,5 @@ struct Articles: Mappable {
 		self.title        <- map["title"]
 		self.description  <- map["description"]
 		self.url          <- map["urlToImage"]
-	
 	}
 }
