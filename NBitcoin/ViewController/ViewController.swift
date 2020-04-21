@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.tableView.dataSource = self
 		self.searchBar.delegate = self
 		self.searchBar.resignFirstResponder()
-		
+		self.hindKeyBoard()
 		self.service = NewbitcoinService()
 		service?.fetchNewsBitcoin { (newsItem) in
 			self.newsBitcoin = newsItem
@@ -32,6 +32,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			NewsManager.shared.news = news
 			self.tableView.reloadData()
 		}
+	}
+	
+	@objc func doneClicked() {
+		view.endEditing(true)
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,5 +103,16 @@ extension ViewController: UISearchBarDelegate {
 				tableView.reloadData()
 			}
 		}
+}
+
+extension UIViewController {
+	// for hind keyboard
+	func hindKeyBoard() {
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+		view.addGestureRecognizer(tap)
+	}
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
+	}
 }
 
