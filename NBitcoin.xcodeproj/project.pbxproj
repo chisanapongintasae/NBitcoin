@@ -19,7 +19,19 @@
 		FC319992242DFB3D00588065 /* NewsBitcoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC319991242DFB3D00588065 /* NewsBitcoinTableViewCell.swift */; };
 		FC319995242F133500588065 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC319994242F133500588065 /* DetailViewController.swift */; };
 		FC3199992439CE5100588065 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3199982439CE5100588065 /* NewsManager.swift */; };
+		FCC28D4F244ECE48001DAFD1 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC28D4E244ECE48001DAFD1 /* Calculate.swift */; };
+		FCC28D57244ECFF5001DAFD1 /* NBitcoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC28D56244ECFF4001DAFD1 /* NBitcoinTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCC28D59244ECFF5001DAFD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31996C242DDBA600588065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC319973242DDBA600588065;
+			remoteInfo = NBitcoin;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0110E684A6C4CC8E5A3E9102 /* Pods-NBitcoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBitcoin.debug.xcconfig"; path = "Target Support Files/Pods-NBitcoin/Pods-NBitcoin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +50,10 @@
 		FC319991242DFB3D00588065 /* NewsBitcoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBitcoinTableViewCell.swift; sourceTree = "<group>"; };
 		FC319994242F133500588065 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FC3199982439CE5100588065 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
+		FCC28D4E244ECE48001DAFD1 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		FCC28D54244ECFF4001DAFD1 /* NBitcoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NBitcoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC28D56244ECFF4001DAFD1 /* NBitcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBitcoinTests.swift; sourceTree = "<group>"; };
+		FCC28D58244ECFF5001DAFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +62,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33FF48CCD96619357D39B44E /* Pods_NBitcoin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCC28D51244ECFF4001DAFD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +98,7 @@
 				FC319977242DDBA600588065 /* AppDelegate.swift */,
 				FC319979242DDBA600588065 /* SceneDelegate.swift */,
 				FC319976242DDBA600588065 /* NBitcoin */,
+				FCC28D55244ECFF4001DAFD1 /* NBitcoinTests */,
 				FC319975242DDBA600588065 /* Products */,
 				9A936ED9CFC61F04EB370DDF /* Pods */,
 				65BCAF81D8E9173CEF0E351B /* Frameworks */,
@@ -85,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				FC319974242DDBA600588065 /* NBitcoin.app */,
+				FCC28D54244ECFF4001DAFD1 /* NBitcoinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +117,7 @@
 		FC319976242DDBA600588065 /* NBitcoin */ = {
 			isa = PBXGroup;
 			children = (
-				FC3199972439CDDE00588065 /* New Group */,
+				FC3199972439CDDE00588065 /* Calculate */,
 				FC319993242F077400588065 /* ViewController */,
 				FC31998C242DF00600588065 /* Model */,
 				FC31998B242DEFFC00588065 /* Service */,
@@ -131,11 +156,21 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		FC3199972439CDDE00588065 /* New Group */ = {
+		FC3199972439CDDE00588065 /* Calculate */ = {
 			isa = PBXGroup;
 			children = (
+				FCC28D4E244ECE48001DAFD1 /* Calculate.swift */,
 			);
-			path = "New Group";
+			path = Calculate;
+			sourceTree = "<group>";
+		};
+		FCC28D55244ECFF4001DAFD1 /* NBitcoinTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCC28D56244ECFF4001DAFD1 /* NBitcoinTests.swift */,
+				FCC28D58244ECFF5001DAFD1 /* Info.plist */,
+			);
+			path = NBitcoinTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +195,24 @@
 			productReference = FC319974242DDBA600588065 /* NBitcoin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FCC28D53244ECFF4001DAFD1 /* NBitcoinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCC28D5B244ECFF5001DAFD1 /* Build configuration list for PBXNativeTarget "NBitcoinTests" */;
+			buildPhases = (
+				FCC28D50244ECFF4001DAFD1 /* Sources */,
+				FCC28D51244ECFF4001DAFD1 /* Frameworks */,
+				FCC28D52244ECFF4001DAFD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCC28D5A244ECFF5001DAFD1 /* PBXTargetDependency */,
+			);
+			name = NBitcoinTests;
+			productName = NBitcoinTests;
+			productReference = FCC28D54244ECFF4001DAFD1 /* NBitcoinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +225,10 @@
 				TargetAttributes = {
 					FC319973242DDBA600588065 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					FCC28D53244ECFF4001DAFD1 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = FC319973242DDBA600588065;
 					};
 				};
 			};
@@ -189,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				FC319973242DDBA600588065 /* NBitcoin */,
+				FCC28D53244ECFF4001DAFD1 /* NBitcoinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +259,13 @@
 				FC319984242DDBAA00588065 /* LaunchScreen.storyboard in Resources */,
 				FC319981242DDBAA00588065 /* Assets.xcassets in Resources */,
 				FC31997F242DDBA600588065 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCC28D52244ECFF4001DAFD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +321,7 @@
 				FC319990242DF17400588065 /* NewsBitcoinService.swift in Sources */,
 				FC31997C242DDBA600588065 /* ViewController.swift in Sources */,
 				FC31998E242DF15D00588065 /* NewsBitcoin.swift in Sources */,
+				FCC28D4F244ECE48001DAFD1 /* Calculate.swift in Sources */,
 				FC319992242DFB3D00588065 /* NewsBitcoinTableViewCell.swift in Sources */,
 				FC3199992439CE5100588065 /* NewsManager.swift in Sources */,
 				FC319978242DDBA600588065 /* AppDelegate.swift in Sources */,
@@ -264,7 +330,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCC28D50244ECFF4001DAFD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCC28D57244ECFF5001DAFD1 /* NBitcoinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCC28D5A244ECFF5001DAFD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC319973242DDBA600588065 /* NBitcoin */;
+			targetProxy = FCC28D59244ECFF5001DAFD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FC31997D242DDBA600588065 /* Main.storyboard */ = {
@@ -438,6 +520,46 @@
 			};
 			name = Release;
 		};
+		FCC28D5C244ECFF5001DAFD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6BDU5BT9M;
+				INFOPLIST_FILE = NBitcoinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisanapong.NBitcoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NBitcoin.app/NBitcoin";
+			};
+			name = Debug;
+		};
+		FCC28D5D244ECFF5001DAFD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T6BDU5BT9M;
+				INFOPLIST_FILE = NBitcoinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisanapong.NBitcoinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NBitcoin.app/NBitcoin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -455,6 +577,15 @@
 			buildConfigurations = (
 				FC319989242DDBAA00588065 /* Debug */,
 				FC31998A242DDBAA00588065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCC28D5B244ECFF5001DAFD1 /* Build configuration list for PBXNativeTarget "NBitcoinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC28D5C244ECFF5001DAFD1 /* Debug */,
+				FCC28D5D244ECFF5001DAFD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

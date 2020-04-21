@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.tableView.dataSource = self
 		self.searchBar.delegate = self
 		self.searchBar.resignFirstResponder()
+		
 		self.service = NewbitcoinService()
 		service?.fetchNewsBitcoin { (newsItem) in
 			self.newsBitcoin = newsItem
@@ -61,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	}
 }
 
+// การทำ Searchbar ด้วยการ filter มี 2 แบบ
 extension ViewController: UISearchBarDelegate {
 	
 //	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -97,23 +99,5 @@ extension ViewController: UISearchBarDelegate {
 				tableView.reloadData()
 			}
 		}
-}
-
-
-
-extension UIImage {
-	public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
-		DispatchQueue.global().async {
-			if let data = try? Data(contentsOf: url) {
-				DispatchQueue.main.async {
-					completion(UIImage(data: data))
-				}
-			} else {
-				DispatchQueue.main.async {
-					completion(nil)
-				}
-			}
-		}
-	}
 }
 

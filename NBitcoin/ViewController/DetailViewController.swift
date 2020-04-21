@@ -21,14 +21,12 @@ class DetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		showDetail()
-		
 		// Do any additional setup after loading the view.
 	}
 	
 	@IBAction func closeButton(_ sender: Any) {
 		self.dismiss(animated: true, completion: nil)
 	}
-	
 	
 	func showDetail() {
 		let data = self.result
