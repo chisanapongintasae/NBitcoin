@@ -22,7 +22,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.tableView.dataSource = self
 		self.searchBar.delegate = self
 		self.searchBar.resignFirstResponder()
-		self.hindKeyBoard()
+		
+		
+		
+		self.dismissKey()
+		
+		
 		self.service = NewbitcoinService()
 		service?.fetchNewsBitcoin { (newsItem) in
 			self.newsBitcoin = newsItem
@@ -34,9 +39,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		}
 	}
 	
-	@objc func doneClicked() {
-		view.endEditing(true)
-	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.newsBitcoin?.articles.count ?? 0
@@ -69,50 +79,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 // การทำ Searchbar ด้วยการ filter มี 2 แบบ
 extension ViewController: UISearchBarDelegate {
 	
-//	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//		print(searchText)
-//		let data = NewsManager.shared.news
-//		if searchText.isEmpty {
-//			self.newsBitcoin = NewsManager.shared.news
-//			tableView.reloadData()
-//		} else {
-//			let filterdItemsArray = data?.articles.filter { item in
-//				return ((item.title.lowercased())).contains(searchText.lowercased())
-//			}
-//			guard let filter = filterdItemsArray else {
-//				return
-//			}
-//			self.newsBitcoin?.articles = filter
-//			tableView.reloadData()
-//		}
-//	}
-//
-		func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-			print(searchText)
-			let data = NewsManager.shared.news
-			if searchText.isEmpty {
-				self.newsBitcoin = NewsManager.shared.news
-				tableView.reloadData()
-			} else {
-				let filterdItemsArray = data?.articles.filter { return (($0.title.lowercased())).contains(searchText.lowercased()) }
-
-				guard let filter = filterdItemsArray else {
-					return
-				}
-				self.newsBitcoin?.articles = filter
-				tableView.reloadData()
+	//	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+	//		print(searchText)
+	//		let data = NewsManager.shared.news
+	//		if searchText.isEmpty {
+	//			self.newsBitcoin = NewsManager.shared.news
+	//			tableView.reloadData()
+	//		} else {
+	//			let filterdItemsArray = data?.articles.filter { item in
+	//				return ((item.title.lowercased())).contains(searchText.lowercased())
+	//			}
+	//			guard let filter = filterdItemsArray else {
+	//				return
+	//			}
+	//			self.newsBitcoin?.articles = filter
+	//			tableView.reloadData()
+	//		}
+	//	}
+	//
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		print(searchText)
+		let data = NewsManager.shared.news
+		if searchText.isEmpty {
+			self.newsBitcoin = NewsManager.shared.news
+			tableView.reloadData()
+		} else {
+			let filterdItemsArray = data?.articles.filter { return (($0.title.lowercased())).contains(searchText.lowercased()) }
+			
+			guard let filter = filterdItemsArray else {
+				return
 			}
+			self.newsBitcoin?.articles = filter
+			tableView.reloadData()
 		}
+	}
 }
 
 extension UIViewController {
-	// for hind keyboard
-	func hindKeyBoard() {
-		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-		view.addGestureRecognizer(tap)
+	func dismissKey()
+	{
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(UIViewController.dismissKeyboard))
+		tap.cancelsTouchesInView = false; view.addGestureRecognizer(tap)
 	}
-	@objc func dismissKeyboard() {
+	@objc func dismissKeyboard()
+	{
 		view.endEditing(true)
 	}
 }
+
 
