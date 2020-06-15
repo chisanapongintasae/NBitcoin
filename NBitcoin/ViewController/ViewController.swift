@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	private var newsBitcoin: NewsItem? = nil
 	private var service: NewbitcoinService? = nil
+	private var number: Int = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -22,9 +23,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		self.tableView.dataSource = self
 		self.searchBar.delegate = self
 		self.searchBar.resignFirstResponder()
-		
-		
-		
 		self.dismissKey()
 		
 		
